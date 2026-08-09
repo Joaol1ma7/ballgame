@@ -11,11 +11,13 @@ import lombok.Setter;
 public class Joga {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="id_incidencia_de_racha",referencedColumnName = "id",nullable=false)
     private IncidenciaDeRacha incidenciaDeRacha;
 
-    @Id
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="id_jogador",referencedColumnName = "id",nullable=false)
     private Usuario jogador;

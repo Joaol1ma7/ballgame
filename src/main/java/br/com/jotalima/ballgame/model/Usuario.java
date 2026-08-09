@@ -1,9 +1,7 @@
 package br.com.jotalima.ballgame.model;
 
 import br.com.jotalima.ballgame.model.enums.Role;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
@@ -14,6 +12,7 @@ import lombok.Setter;
 @Table(name="usuario")
 public class Usuario {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;

@@ -12,7 +12,8 @@ import lombok.Setter;
 public class Participa {
 
     @Id
-    private Long participaId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name="id_racha",referencedColumnName = "id",nullable=false)

@@ -11,11 +11,13 @@ import lombok.Setter;
 public class Administra {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="id_racha",referencedColumnName = "id",nullable=false)
     private Racha racha;
 
-    @Id
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="id_admin",referencedColumnName = "id",nullable=false)
     private Usuario admin;

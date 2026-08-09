@@ -14,9 +14,10 @@ import java.util.Set;
 @Table(name="incidencia_de_racha")
 public class IncidenciaDeRacha {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch= FetchType.LAZY)
+    @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="id_racha",referencedColumnName = "id",nullable=false)
     private Racha racha;
 
